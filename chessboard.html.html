@@ -1,0 +1,64 @@
+<style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ghSOSeyZ_mHNYEHla-7hHxErr_Zkrh5sh_9sWjET&s");
+        background-size: cover;
+    }
+
+    .white {
+        background-color: #fff;
+        width: 100px;
+        height: 100px;
+    }
+
+    .black {
+        background-color: #000;
+        width: 100px;
+        height: 100px;
+    }
+
+    table {
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <table id="data" border="40"></table>
+</body>
+
+<script type="text/javascript">
+
+    let data = document.getElementById('data');
+
+    for (let i = 1; i <= 8; i++) {
+        let tr = document.createElement('tr');
+
+        if (i % 2 == 1) {
+            for (let j = 1; j <= 8; j++) {
+                if (j % 2 == 1) {
+                    let td = document.createElement('td');
+                    td.setAttribute('class', 'white');
+                    tr.appendChild(td);
+                } else {
+                    let td = document.createElement('td');
+                    td.setAttribute('class', 'black');
+                    tr.appendChild(td);
+                }
+            }
+        } else {
+            for (let j = 1; j <= 8; j++) {
+                if (j % 2 == 1) {
+                    let td = document.createElement('td');
+                    td.setAttribute('class', 'black');
+                    tr.appendChild(td);
+                } else {
+                    let td = document.createElement('td');
+                    td.setAttribute('class', 'white');
+                    tr.appendChild(td);
+                }
+            }
+        }
+        data.appendChild(tr);
+    }
+
+</script>
